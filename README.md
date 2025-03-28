@@ -86,7 +86,7 @@ This project is for academic research and follows the author's usage guidelines.
 
 ---
 
-# requirements.txt
+# Requirements.txt
 
 ```
 os
@@ -98,4 +98,12 @@ seaborn
 pandas
 scipy
 ```
+## Required Version
 
+```
+matplotlib==3.5.2
+numpy==1.21.5
+pandas==1.4.4
+scikit_learn==1.0.2
+seaborn==0.11.2
+```
