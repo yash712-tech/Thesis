@@ -2,14 +2,16 @@
 import os
 import pickle
 import numpy as np
-from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score, jaccard_score
-import numpy as np
-from sklearn.model_selection import cross_val_score
-from sklearn.ensemble import RandomForestClassifier
-import numpy as np
+import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score, jaccard_score
+from sklearn.model_selection import cross_val_score
+from scipy.ndimage import median_filter
+
 ```
 
 
@@ -85,8 +87,7 @@ def model_inference_filtering_modelinram(X, Y,model_load,orig_img_size):
     contingency_maps(Y,Y_all_aqqala_filtered, orig_img_size)
     
 
-import numpy as np
-import matplotlib.pyplot as plt
+
 
 def contingency_maps(y_true, y_pred, orig_img_size):
     # Reshape the flattened prediction and true labels back to their original image dimensions
@@ -265,9 +266,7 @@ print(np.shape(X_scenarios_pakistan['coh_amp_prepost']))
 ```python
 ## Median blur on GT 
 
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.ndimage import median_filter
+
 
 # Assuming 'flattened_image' is your input flattened array.
 # Replace the random data with your actual flattened image data.
@@ -403,7 +402,6 @@ model.fit(gen_X_training, gen_Y_training) #For sklearn no one hot encoding
 
 
 ```python
-from sklearn.ensemble import GradientBoostingClassifier
 
 model = GradientBoostingClassifier(
     n_estimators=100, 
@@ -425,9 +423,6 @@ model_inference_filtering_modelinram(X_scenarios_pakistan['coh_amp_prepost'], Y_
 
 
 ```python
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVC
-from sklearn.ensemble import GradientBoostingClassifier
 
 
 # Initialize models
@@ -452,7 +447,6 @@ for name, model in zip(model_names, models):
 
 
 ```python
-import matplotlib.pyplot as plt
 
 fig, axes = plt.subplots(1, 3, figsize=(15, 5))
 fig.suptitle('Model Comparison Across Regions')
