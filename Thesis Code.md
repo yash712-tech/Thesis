@@ -264,10 +264,6 @@ print(np.shape(X_scenarios_pakistan['coh_amp_prepost']))
 
 
 ```python
-## Median blur on GT 
-
-
-
 # Assuming 'flattened_image' is your input flattened array.
 # Replace the random data with your actual flattened image data.
 
